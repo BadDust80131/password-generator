@@ -13,3 +13,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.password {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
