@@ -17,10 +17,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 16px;
 }
 
 .password {
   display: flex;
   justify-content: center;
   gap: 16px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#length {
+  width: 200px;
 }

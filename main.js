@@ -1,5 +1,7 @@
 import "./style.css";
 const passText = document.querySelector("#pass");
+const lengthSlider = document.querySelector("#length");
+const generateButton = document.querySelector("#generate");
 
 function pickFromArray(choice) {
   const lowerAlphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -21,7 +23,8 @@ function pickFromArray(choice) {
   }
 }
 
-function generatePasswordV2(length) {
+function generatePasswordV2() {
+  let length = lengthSlider.value;
   let optionArray = [];
   let counter = 0;
   let isLower = true;
@@ -79,4 +82,4 @@ function generatePasswordV2(length) {
   passText.value = result.join("");
 }
 
-generatePasswordV2(12);
+generateButton.addEventListener("click", generatePasswordV2);
