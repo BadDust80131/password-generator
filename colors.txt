@@ -1,0 +1,6 @@
+/* CSS HEX */
+--black: #08070Cff;
+--light-green: #A3FEAEff;
+--jet: #34343Cff;
+--night: #0B0A10ff;
+--black-2: #09090Dff;
