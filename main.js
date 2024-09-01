@@ -13,6 +13,10 @@ copyButton.addEventListener("click", () => {
   navigator.clipboard.writeText(passText.value);
 });
 
+passText.addEventListener("input", () => {
+  console.log(calculatePasswordStrength(passText.value));
+});
+
 function pickFromArray(choice) {
   const lowerAlphabet = "abcdefghijklmnopqrstuvwxyz";
   const upperAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -90,6 +94,27 @@ function generatePasswordV2() {
   }
   console.log(result);
   passText.value = result.join("");
+  console.log(calculatePasswordStrength(passText.value));
+}
+
+function calculatePasswordStrength(password) {
+  let points = 0;
+
+  if (password.length >= 8) points += 1;
+  if (password.length >= 12) points += 1.5;
+  if (password.length >= 16) points += 2;
+  if (/[a-z]/.test(password)) points += 1;
+  if (/[A-Z]/.test(password)) points += 1.5;
+  if (/[0-9]/.test(password)) points += 1.5;
+  if (/[^a-zA-Z0-9]/.test(password)) points += 2;
+  if (/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z0-9])/.test(password)) {
+    points += 2;
+  }
+
+  if (points <= 2) return 1;
+  else if (points <= 4) return 2;
+  else if (points <= 6) return 3;
+  else if (points > 6) return 4;
 }
 
 generateButton.addEventListener("click", generatePasswordV2);
