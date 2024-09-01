@@ -11,10 +11,18 @@
       <h1>Password Generator</h1>
       <div class="password">
         <input type="text" name="pass" id="pass" />
-        <img src="/copy.svg" alt="" />
+        <img src="/copy.svg" alt="" id="copy"/>
       </div>
       <div class="options">
-        <input type="range" name="length" id="length" min="6" max="20" step="1">
+        <input type="range" name="length" id="length" min="6" max="20" step="1" value="8">
+        <label for="lower">Include lowercase</label>
+        <input type="checkbox" name="lower" id="lower" checked>
+        <label for="upper">Include uppercase</label>
+        <input type="checkbox" name="upper" id="upper" checked>
+        <label for="number">Include numbers</label>
+        <input type="checkbox" name="number" id="number" checked>
+        <label for="symbol">Include symbols</label>
+        <input type="checkbox" name="symbol" id="symbol">
       </div>
       <button type="button" id="generate">Generate</button>
     </div>

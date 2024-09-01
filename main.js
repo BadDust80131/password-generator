@@ -2,6 +2,16 @@ import "./style.css";
 const passText = document.querySelector("#pass");
 const lengthSlider = document.querySelector("#length");
 const generateButton = document.querySelector("#generate");
+const lowerInput = document.querySelector("#lower");
+const upperInput = document.querySelector("#upper");
+const symbolInput = document.querySelector("#symbol");
+const numberInput = document.querySelector("#number");
+const copyButton = document.querySelector("#copy");
+
+copyButton.addEventListener("click", () => {
+  passText.select();
+  navigator.clipboard.writeText(passText.value);
+});
 
 function pickFromArray(choice) {
   const lowerAlphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -27,10 +37,10 @@ function generatePasswordV2() {
   let length = lengthSlider.value;
   let optionArray = [];
   let counter = 0;
-  let isLower = true;
-  let isUpper = true;
-  let isNumber = true;
-  let isSymbol = true;
+  let isLower = lowerInput.checked;
+  let isUpper = upperInput.checked;
+  let isNumber = numberInput.checked;
+  let isSymbol = symbolInput.checked;
   counter += isLower + isUpper + isNumber + isSymbol;
   let iter = Math.floor(length / counter);
   let result = [];

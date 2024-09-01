@@ -26,6 +26,10 @@
   gap: 16px;
 }
 
+.password img {
+  cursor: pointer;
+}
+
 .options {
   display: flex;
   flex-direction: column;
